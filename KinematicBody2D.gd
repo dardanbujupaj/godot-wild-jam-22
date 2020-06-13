@@ -5,6 +5,8 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 
+const JUMP_SPEED = 2000
+
 export (int) var speed = 100
 onready var gravity = 20*ProjectSettings.get_setting("physics/2d/default_gravity")
 
