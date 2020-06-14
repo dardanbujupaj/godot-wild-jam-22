@@ -454,12 +454,12 @@ points = PoolVector2Array( 8, 8, 0, 8, 0, 0, 8, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="ShaderMaterial" id=51]
-
-[sub_resource type="RectangleShape2D" id=49]
-extents = Vector2( 31.5, 32.25 )
+[sub_resource type="ShaderMaterial" id=49]
 
 [sub_resource type="RectangleShape2D" id=50]
+extents = Vector2( 31.5, 32.25 )
+
+[sub_resource type="RectangleShape2D" id=51]
 extents = Vector2( 31.9391, 31.9371 )
 
 [node name="TestScene" type="Node2D"]
@@ -477,6 +477,7 @@ position = Vector2( 511.241, 302.483 )
 current = true
 
 [node name="Character" type="KinematicBody2D" parent="."]
+position = Vector2( 508.816, 173.828 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 __meta__ = {
@@ -486,11 +487,11 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Character"]
 
 [node name="icon" type="Sprite" parent="Character/Sprite"]
-material = SubResource( 51 )
+material = SubResource( 49 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-shape = SubResource( 49 )
+shape = SubResource( 50 )
 
 [node name="Character2" type="KinematicBody2D" parent="."]
 visible = false
@@ -507,4 +508,4 @@ __meta__ = {
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character2"]
-shape = SubResource( 50 )
+shape = SubResource( 51 )

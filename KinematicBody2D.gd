@@ -1,36 +1,34 @@
 extends KinematicBody2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-const JUMP_SPEED = 2000
-
-export (int) var speed = 100
-onready var gravity = 20*ProjectSettings.get_setting("physics/2d/default_gravity")
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 
+#Jump 
+export var fallMultiplier = 2
+export var lowJumpMultiplier = 10
+export var jumpVelocity = 500 #Jump height
+export var speed = 150 #movement left right
+#Physics
 var velocity = Vector2()
-
-func get_input():
-	velocity = Vector2()
-	if Input.is_action_pressed('ui_right'):
-		velocity.x += 1
-	if Input.is_action_pressed('ui_left'):
-		velocity.x -= 1
-	if Input.is_action_pressed('ui_down'):
-		velocity.y += 1
-	if Input.is_action_pressed('ui_up'):
-		velocity.y -= 1
-	velocity = velocity.normalized() * speed
+onready var gravity = 9.8
 
 func _physics_process(delta):
-	get_input()
-	# Vertical movement code. Apply gravity.
-	velocity.y += gravity * delta
-	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP) #move_and_slide(velocity)
+
+	#Applying gravity to player
+	velocity.y += gravity
+	
+	#Jump Physics
+	if velocity.y > 0: #Player is falling
+		velocity += Vector2.UP * (-gravity) * (fallMultiplier) #Falling action is faster than jumping action
+	elif velocity.y < 0 && Input.is_action_just_released('ui_up'): #Player is jumping 
+		velocity += Vector2.UP * (-gravity) * (lowJumpMultiplier) #Jump Height depends on how long you will hold key
+
+	if is_on_floor():
+		if Input.is_action_just_pressed('ui_up'): 
+			velocity = Vector2.UP * jumpVelocity #Normal Jump action
+
+	velocity.x = speed * (Input.get_action_strength('ui_right') - Input.get_action_strength('ui_left'))
+	
+	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)

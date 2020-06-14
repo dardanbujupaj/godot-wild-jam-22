@@ -2,7 +2,7 @@ extends Actor
 
 const FLOOR_DETECT_DISTANCE = 20.0
 
-export(String) var action_suffix = ""
+#export(String) var action_suffix = ""
 
 onready var sprite = $Sprite
 
@@ -32,7 +32,7 @@ func _ready():
 func _physics_process(_delta):
 	var direction = get_direction()
 
-	var is_jump_interrupted = Input.is_action_just_released("ui_up" + action_suffix) and _velocity.y < 0.0
+	var is_jump_interrupted = Input.is_action_just_released('ui_up') and _velocity.y < 0.0
 	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
 
 	var snap_vector = Vector2.DOWN * FLOOR_DETECT_DISTANCE if direction.y == 0.0 else Vector2.ZERO
@@ -44,8 +44,8 @@ func _physics_process(_delta):
 
 func get_direction():
 	return Vector2(
-		Input.get_action_strength("ui_right" + action_suffix) - Input.get_action_strength("ui_left" + action_suffix),
-		-1 if is_on_floor() and Input.is_action_just_pressed("ui_up" + action_suffix) else 0
+		Input.get_action_strength('ui_right') - Input.get_action_strength('ui_left'),
+			-1 if (is_on_floor() and Input.is_action_just_pressed('ui_up')) else 0
 	)
 
 
