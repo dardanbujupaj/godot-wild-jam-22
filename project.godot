@@ -55,6 +55,10 @@ ui_down={
  ]
 }
 
+[physics]
+
+2d/physics_engine="GodotPhysics"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
