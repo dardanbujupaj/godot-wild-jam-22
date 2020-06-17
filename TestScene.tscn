@@ -476,3 +476,4 @@ scale = Vector2( 1, 1 )
 [node name="Camera2D" type="Camera2D" parent="Character"]
 scale = Vector2( 2, 2 )
 current = true
+zoom = Vector2( 2, 2 )
