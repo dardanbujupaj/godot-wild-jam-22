@@ -15,7 +15,9 @@ export var speed = 150 #movement left right
 var velocity = Vector2()
 onready var gravity = 9.8
 
-func _physics_process(delta):
+signal collect
+
+func _physics_process(delta):	
 
 	#Applying gravity to player
 	velocity.y += gravity
@@ -44,3 +46,7 @@ func _physics_process(delta):
 		$sprite.scale.x = velocity.x / abs(velocity.x)
 	
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
+
+func _on_Player_body_entered(body):
+	emit_signal("collect")
+	body.hide()
