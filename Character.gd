@@ -47,6 +47,8 @@ func _physics_process(delta):
 	
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
 
-func _on_Player_body_entered(body):
+
+
+func _on_Item_body_entered(body):
 	emit_signal("collect")
-	body.hide()
+	print(body.get_name())

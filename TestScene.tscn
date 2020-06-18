@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -498,6 +498,22 @@ resource_name = "itemSound"
 format = 1
 stereo = true
 
+[sub_resource type="Animation" id=54]
+resource_name = "pick"
+step = 1.0
+
+[sub_resource type="Animation" id=55]
+resource_name = "pick"
+step = 1.0
+
+[sub_resource type="Animation" id=56]
+resource_name = "pick"
+step = 1.0
+
+[sub_resource type="Animation" id=57]
+resource_name = "pick"
+step = 1.0
+
 [node name="TestScene" type="Node2D"]
 
 [node name="Background" type="TileMap" parent="."]
@@ -518,6 +534,9 @@ tile_data = PoolIntArray( -786444, 1, 196608, -655356, 0, 0, -655347, 0, 196609,
 position = Vector2( 599.932, -362.473 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="icon" type="Sprite" parent="Collectibles/Item"]
 position = Vector2( 0.250916, -1.22787 )
@@ -533,6 +552,94 @@ shape = SubResource( 51 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Collectibles/Item"]
 stream = SubResource( 52 )
 
+[node name="Item2" type="Area2D" parent="Collectibles"]
+position = Vector2( 1344.99, -652.038 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="icon" type="Sprite" parent="Collectibles/Item2"]
+position = Vector2( 0.250916, -1.22787 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collectibles/Item2"]
+anims/pick = SubResource( 54 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/Item2"]
+position = Vector2( 0.975342, 0 )
+shape = SubResource( 51 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Collectibles/Item2"]
+stream = SubResource( 52 )
+
+[node name="Item3" type="Area2D" parent="Collectibles"]
+position = Vector2( 813.285, 342.831 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="icon" type="Sprite" parent="Collectibles/Item3"]
+position = Vector2( 0.250916, -1.22787 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collectibles/Item3"]
+anims/pick = SubResource( 55 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/Item3"]
+position = Vector2( 0.975342, 0 )
+shape = SubResource( 51 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Collectibles/Item3"]
+stream = SubResource( 52 )
+
+[node name="Item4" type="Area2D" parent="Collectibles"]
+position = Vector2( 350.984, -747.458 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="icon" type="Sprite" parent="Collectibles/Item4"]
+position = Vector2( 0.250916, -1.22787 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collectibles/Item4"]
+anims/pick = SubResource( 56 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/Item4"]
+position = Vector2( 0.975342, 0 )
+shape = SubResource( 51 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Collectibles/Item4"]
+stream = SubResource( 52 )
+
+[node name="Item5" type="Area2D" parent="Collectibles"]
+position = Vector2( 1140, -544.763 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="icon" type="Sprite" parent="Collectibles/Item5"]
+position = Vector2( 0.250916, -1.22787 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Collectibles/Item5"]
+anims/pick = SubResource( 57 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectibles/Item5"]
+position = Vector2( 0.975342, 0 )
+shape = SubResource( 51 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Collectibles/Item5"]
+stream = SubResource( 52 )
+
 [node name="Character" parent="." instance=ExtResource( 1 )]
 position = Vector2( 371.498, -346.543 )
 speed = 300
@@ -540,3 +647,18 @@ speed = 300
 [node name="Camera2D" type="Camera2D" parent="Character"]
 scale = Vector2( 2, 2 )
 current = true
+[connection signal="body_entered" from="Collectibles/Item" to="Collectibles/Item" method="_on_Item_body_entered"]
+[connection signal="body_entered" from="Collectibles/Item" to="Character" method="_on_Item_body_entered"]
+[connection signal="body_shape_entered" from="Collectibles/Item" to="Collectibles/Item" method="_on_Item_body_shape_entered"]
+[connection signal="body_entered" from="Collectibles/Item2" to="Collectibles/Item2" method="_on_Item_body_entered"]
+[connection signal="body_entered" from="Collectibles/Item2" to="Character" method="_on_Item_body_entered"]
+[connection signal="body_shape_entered" from="Collectibles/Item2" to="Collectibles/Item2" method="_on_Item_body_shape_entered"]
+[connection signal="body_entered" from="Collectibles/Item3" to="Collectibles/Item3" method="_on_Item_body_entered"]
+[connection signal="body_entered" from="Collectibles/Item3" to="Character" method="_on_Item_body_entered"]
+[connection signal="body_shape_entered" from="Collectibles/Item3" to="Collectibles/Item3" method="_on_Item_body_shape_entered"]
+[connection signal="body_entered" from="Collectibles/Item4" to="Collectibles/Item4" method="_on_Item_body_entered"]
+[connection signal="body_entered" from="Collectibles/Item4" to="Character" method="_on_Item_body_entered"]
+[connection signal="body_shape_entered" from="Collectibles/Item4" to="Collectibles/Item4" method="_on_Item_body_shape_entered"]
+[connection signal="body_entered" from="Collectibles/Item5" to="Character" method="_on_Item_body_entered"]
+[connection signal="body_entered" from="Collectibles/Item5" to="Collectibles/Item5" method="_on_Item_body_entered"]
+[connection signal="body_shape_entered" from="Collectibles/Item5" to="Collectibles/Item5" method="_on_Item_body_shape_entered"]
