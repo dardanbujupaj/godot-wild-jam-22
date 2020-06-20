@@ -12,4 +12,7 @@ func _ready():
 func _on_Item_body_entered(body):	
 	if body.get_name() == 'Character':
 		hide()
+		$AudioStreamPlayer2D.play()
+		yield($AudioStreamPlayer2D, "finished")
 		queue_free() # delete
+		print('free')
