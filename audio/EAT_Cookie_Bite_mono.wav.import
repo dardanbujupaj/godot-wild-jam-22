@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/EAT_Cookie_Bite_mono.wav-c3c2879af00e0b8e72d6c4f6cb5a1c4b.sample"
+
+[deps]
+
+source_file="res://audio/EAT_Cookie_Bite_mono.wav"
+dest_files=[ "res://.import/EAT_Cookie_Bite_mono.wav-c3c2879af00e0b8e72d6c4f6cb5a1c4b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
