@@ -12,7 +12,6 @@ step = 1.0
 radius = 43.1243
 
 [node name="Baguette" type="Area2D"]
-scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -29,7 +28,6 @@ shape = SubResource( 2 )
 stream = ExtResource( 2 )
 
 [node name="baguette" type="Sprite" parent="."]
-position = Vector2( 1.26758, 2.46698 )
 texture = ExtResource( 1 )
 [connection signal="body_entered" from="." to="." method="_on_Item_body_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_Item_body_shape_entered"]
