@@ -19,7 +19,15 @@ func _ready():
 func _on_Character_gameover():
 	print("show gameover")
 	$GameOver.show()
+	
 
+func _input(event):
+	if Input.is_key_pressed(KEY_SPACE) and $GameOver.is_visible_in_tree():
+		restartGame()
 
 func _on_Button_button_down():
+	restartGame()
+
+
+func restartGame():
 	get_tree().change_scene("res://TestScene.tscn")
