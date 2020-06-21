@@ -14,9 +14,19 @@ func _ready():
 		child.connect("collect", $GUI/MarginContainer/BaguetteCount, "_on_Coin_collect")
 
 	$GUI/MarginContainer/BaguetteCount/outOf.text = ("/ %d" % $Collectibles.get_child_count())
-
+	$GUI/MarginContainer/BaguetteCount.outOf = $Collectibles.get_child_count()
+	
 	$AudioStreamPlayer.connect("finished", self, "_on_audio_finished")
 
+
+
+func _on_end_reached(node):
+	# TODO end of game reached
+	$AudioStreamPlayer.stop()
+	$GameWonPlayer.play()
+
+
+# choose next loop part when finished
 func _on_audio_finished():
 	$AudioStreamPlayer.stream = sounds[rand_range(0, len(sounds))]
 	$AudioStreamPlayer.play(0)
@@ -25,3 +35,7 @@ func _on_audio_finished():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_BaguetteCount_all_found():
+	$CollectedPlayer.play()

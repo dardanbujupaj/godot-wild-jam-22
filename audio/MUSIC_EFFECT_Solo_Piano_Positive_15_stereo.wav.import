@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MUSIC_EFFECT_Solo_Piano_Positive_15_stereo.wav-4bd00536c6bc92f90405cdebeaeff3ff.sample"
+
+[deps]
+
+source_file="res://audio/MUSIC_EFFECT_Solo_Piano_Positive_15_stereo.wav"
+dest_files=[ "res://.import/MUSIC_EFFECT_Solo_Piano_Positive_15_stereo.wav-4bd00536c6bc92f90405cdebeaeff3ff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
