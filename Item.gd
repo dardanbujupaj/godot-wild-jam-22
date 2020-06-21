@@ -1,5 +1,7 @@
 extends Area2D
 
+signal collect
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -10,9 +12,13 @@ func _ready():
 #	pass
 
 func _on_Item_body_entered(body):	
+	
 	if body.get_name() == 'Character':
+		print('emit signal')		
+		emit_signal("collect")		
 		hide()
 		$AudioStreamPlayer2D.play()
 		yield($AudioStreamPlayer2D, "finished")
 		queue_free() # delete
 		print('free')
+
