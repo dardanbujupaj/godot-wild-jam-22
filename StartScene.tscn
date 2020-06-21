@@ -64,7 +64,7 @@ margin_top = 110.0
 margin_right = 576.0
 margin_bottom = 209.0
 custom_fonts/font = SubResource( 2 )
-text = "Collectez des baguettes et sauver la révolution."
+text = "Collectez des baguettes et sauvez la révolution."
 align = 1
 autowrap = true
 

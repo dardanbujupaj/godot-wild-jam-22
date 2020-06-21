@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="godot-wild-jam-22"
-run/main_scene="res://TestScene.tscn"
+config/name="Pris de la Baguette"
+run/main_scene="res://StartScene.tscn"
 config/icon="res://icon.png"
 
 [input]
