@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 
 # Declare member variables here. Examples:
@@ -8,13 +8,14 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	for child in $Collectibles.get_children():
-		child.connect("collect", $GUI/MarginContainer/BaguetteCount, "_on_Coin_collect")
-	
-	$GUI/MarginContainer/BaguetteCount/outOf.text = ("/ %d" % $Collectibles.get_child_count())
+	print("hide gameover")
+	$GameOver.hide()	
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func _on_Character_gameover():
+	print("show gameover")
+	$GameOver.show()

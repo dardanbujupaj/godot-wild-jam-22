@@ -15,6 +15,9 @@ export var speed = 150 #movement left right
 var velocity = Vector2()
 onready var gravity = 9.8
 
+const DEATHTIME = 2.0
+var deathcnt = DEATHTIME
+signal gameover
 
 func _physics_process(delta):	
 
@@ -30,11 +33,13 @@ func _physics_process(delta):
 	
 	#Jump Physics
 	if velocity.y > 0: #Player is falling
+		deathcnt -= delta
 		velocity += Vector2.UP * (-gravity) * (fallMultiplier) #Falling action is faster than jumping action
 	elif velocity.y < 0 && Input.is_action_just_released('ui_up'): #Player is jumping 
 		velocity += Vector2.UP * (-gravity) * (lowJumpMultiplier) #Jump Height depends on how long you will hold key
 
 	if is_on_floor():
+		deathcnt = DEATHTIME
 		if Input.is_action_just_pressed('ui_up'): 
 			velocity = Vector2.UP * jumpVelocity #Normal Jump action
 
@@ -44,5 +49,9 @@ func _physics_process(delta):
 	if velocity.x != 0:
 		$sprite.scale.x = velocity.x / abs(velocity.x)
 	
+	if deathcnt <= 0:
+		print("gameOver")
+		emit_signal("gameover")
+		
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
 
