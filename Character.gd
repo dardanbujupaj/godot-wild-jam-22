@@ -1,16 +1,10 @@
 extends KinematicBody2D
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$AnimationPlayer.play("rest")
-	pass # Replace with function body.
-
-
 #Jump 
-export var fallMultiplier = 2
-export var lowJumpMultiplier = 10
-export var jumpVelocity = 500 #Jump height
-export var speed = 150 #movement left right
+var fallMultiplier = 2
+var lowJumpMultiplier = 10
+var jumpVelocity = 500 #Jump height
+var speed = 400 #movement left right
 #Physics
 var velocity = Vector2()
 onready var gravity = 9.8
@@ -20,6 +14,14 @@ var deathcnt = DEATHTIME
 signal gameover
 var isGameover = false
 
+var spriteScale
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	spriteScale = $sprite.scale.x
+
+
+
 func _physics_process(delta):	
 
 	#Applying gravity to player
@@ -28,9 +30,9 @@ func _physics_process(delta):
 	
 	# set animation to walk/rest according to velocity
 	if abs(velocity.x) > 0.01:
-		$AnimationPlayer.play("walk")
+		$sprite.play("walk")
 	else:
-		$AnimationPlayer.play("rest")
+		$sprite.play("default")
 	
 	#Jump Physics
 	if velocity.y > 0: #Player is falling
@@ -48,7 +50,7 @@ func _physics_process(delta):
 	
 	# flip character when walking left
 	if velocity.x != 0:
-		$sprite.scale.x = velocity.x / abs(velocity.x)
+		$sprite.scale.x = spriteScale * velocity.x / abs(velocity.x)
 	
 	if deathcnt <= 0 and !isGameover:
 		isGameover = true

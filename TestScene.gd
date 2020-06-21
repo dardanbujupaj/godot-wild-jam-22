@@ -17,6 +17,15 @@ func _ready():
 
 	$AudioStreamPlayer.connect("finished", self, "_on_audio_finished")
 
+
+
+func _on_end_reached():
+	# TODO end of game reached
+	print('game won,,,')
+	pass
+
+
+# choose next loop part when finished
 func _on_audio_finished():
 	$AudioStreamPlayer.stream = sounds[rand_range(0, len(sounds))]
 	$AudioStreamPlayer.play(0)
