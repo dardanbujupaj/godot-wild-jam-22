@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://font/Anton-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://BaguetteCount.gd" type="Script" id=7]
 [ext_resource path="res://TestScene.gd" type="Script" id=8]
+[ext_resource path="res://audio/BATTLE_Medieval_Reinact_Footsoldiers_Knights_01_loop_stereo.wav" type="AudioStream" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "wall_tiles.png 0"
@@ -575,39 +576,51 @@ __meta__ = {
 
 [node name="Coin" parent="Collectibles" instance=ExtResource( 2 )]
 position = Vector2( 82.1073, -146.462 )
+rotation = 74.8169
 
 [node name="Coin2" parent="Collectibles" instance=ExtResource( 2 )]
 position = Vector2( 1136.61, -547.535 )
+rotation = 131.108
 
 [node name="Coin3" parent="Collectibles" instance=ExtResource( 2 )]
 position = Vector2( 1343.88, -651.169 )
+rotation = 75.4799
 
 [node name="Coin4" parent="Collectibles" instance=ExtResource( 2 )]
 position = Vector2( 346.398, -747.401 )
+rotation = 132.197
 
 [node name="Coin5" parent="Collectibles" instance=ExtResource( 2 )]
 position = Vector2( 818.305, 340.761 )
+rotation = 74.7524
 
 [node name="Baguette" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( -307.458, -140.968 )
+rotation = 131.71
 
 [node name="Baguette2" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( -649.143, -437.002 )
+rotation = 131.551
 
 [node name="Baguette3" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( -244.594, -547.065 )
+rotation = 130.844
 
 [node name="Baguette4" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( -61.228, -445.629 )
+rotation = 75.6192
 
 [node name="Baguette5" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 964.351, -545.856 )
+rotation = 74.5266
 
 [node name="Baguette6" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( -1125.15, -945.528 )
+rotation = 130.612
 
 [node name="Baguette7" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( -1155.08, -1340.84 )
+rotation = 131.575
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
 position = Vector2( 371.498, -346.543 )
@@ -615,3 +628,8 @@ speed = 300
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 current = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -34.93
+autoplay = true

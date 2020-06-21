@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/EAT_Chew_3_Times_mono.wav-0fdef9391cec378a0c817697c204f9e3.sample"
+
+[deps]
+
+source_file="res://audio/EAT_Chew_3_Times_mono.wav"
+dest_files=[ "res://.import/EAT_Chew_3_Times_mono.wav-0fdef9391cec378a0c817697c204f9e3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

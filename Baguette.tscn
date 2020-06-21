@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://baguette.png" type="Texture" id=1]
-[ext_resource path="res://audio/sound_coin.wav" type="AudioStream" id=2]
+[ext_resource path="res://audio/EAT_Cookie_Chew_3_Times_mono.wav" type="AudioStream" id=2]
 [ext_resource path="res://Item.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
