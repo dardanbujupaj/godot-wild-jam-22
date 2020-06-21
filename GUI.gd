@@ -19,3 +19,7 @@ func _ready():
 func _on_Character_gameover():
 	print("show gameover")
 	$GameOver.show()
+
+
+func _on_Button_button_down():
+	get_tree().change_scene("res://TestScene.tscn")

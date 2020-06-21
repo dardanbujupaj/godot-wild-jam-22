@@ -18,6 +18,7 @@ onready var gravity = 9.8
 const DEATHTIME = 2.0
 var deathcnt = DEATHTIME
 signal gameover
+var isGameover = false
 
 func _physics_process(delta):	
 
@@ -49,7 +50,8 @@ func _physics_process(delta):
 	if velocity.x != 0:
 		$sprite.scale.x = velocity.x / abs(velocity.x)
 	
-	if deathcnt <= 0:
+	if deathcnt <= 0 and !isGameover:
+		isGameover = true
 		print("gameOver")
 		emit_signal("gameover")
 		
