@@ -9,6 +9,9 @@ const sounds = [
 ]
 
 var direction
+
+var collected = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rotation += randf()
@@ -27,7 +30,8 @@ func _process(delta):
 
 func _on_Item_body_entered(body):	
 	
-	if body.get_name() == 'Character':
+	if body.get_name() == 'Character' and !collected:
+		collected = true
 		emit_signal("collect")
 		hide()
 		$AudioStreamPlayer2D.play()

@@ -17,9 +17,12 @@ func _ready():
 #	pass
 
 func _on_Character_gameover():
-	print("show gameover")
+	$GameOver/GameOverText.text = "Game Over"
+	$GameOver/BaguettesText.text = "%s %s found" % [$MarginContainer/BaguetteCount/Value.text, $MarginContainer/BaguetteCount/outOf.text]
 	$GameOver.show()
-	
+	get_tree().paused = true
+
+
 
 func _input(event):
 	if Input.is_key_pressed(KEY_SPACE) and $GameOver.is_visible_in_tree():
@@ -30,4 +33,12 @@ func _on_Button_button_down():
 
 
 func restartGame():
+	get_tree().paused = false
 	get_tree().change_scene("res://TestScene.tscn")
+
+
+func _on_Stair_body_entered(body):
+	$GameOver/GameOverText.text = "Game Won"
+	$GameOver/BaguettesText.text = "%s %s found" % [$MarginContainer/BaguetteCount/Value.text, $MarginContainer/BaguetteCount/outOf.text]
+	$GameOver.show()
+	get_tree().paused = true
