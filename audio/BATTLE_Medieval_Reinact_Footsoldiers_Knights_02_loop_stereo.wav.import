@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BATTLE_Medieval_Reinact_Footsoldiers_Knights_02_loop_stereo.wav-ec88d6107c85d6679e7b7b4ff7a8e6e1.sample"
+
+[deps]
+
+source_file="res://audio/BATTLE_Medieval_Reinact_Footsoldiers_Knights_02_loop_stereo.wav"
+dest_files=[ "res://.import/BATTLE_Medieval_Reinact_Footsoldiers_Knights_02_loop_stereo.wav-ec88d6107c85d6679e7b7b4ff7a8e6e1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

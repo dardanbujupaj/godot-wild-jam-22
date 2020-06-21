@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/EAT_Cookie_Chew_3_Times_mono.wav-4a5c931080028e55f2c34c4d95a95277.sample"
+
+[deps]
+
+source_file="res://audio/EAT_Cookie_Chew_3_Times_mono.wav"
+dest_files=[ "res://.import/EAT_Cookie_Chew_3_Times_mono.wav-4a5c931080028e55f2c34c4d95a95277.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
