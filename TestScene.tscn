@@ -574,6 +574,7 @@ __meta__ = {
 [node name="Collectibles" type="Node2D" parent="."]
 
 [node name="Coin" parent="Collectibles" instance=ExtResource( 2 )]
+position = Vector2( 82.1073, -146.462 )
 
 [node name="Coin2" parent="Collectibles" instance=ExtResource( 2 )]
 position = Vector2( 1136.61, -547.535 )
@@ -589,18 +590,15 @@ position = Vector2( 818.305, 340.761 )
 
 [node name="Baguette" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( -307.458, -140.968 )
-scale = Vector2( 0.25, 0.25 )
 
 [node name="Baguette2" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( -649.143, -437.002 )
 
 [node name="Baguette3" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( -244.594, -547.065 )
-scale = Vector2( 0.25, 0.25 )
 
 [node name="Baguette4" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( -61.228, -445.629 )
-scale = Vector2( 0.25, 0.25 )
 
 [node name="Baguette5" parent="Collectibles" instance=ExtResource( 3 )]
 position = Vector2( 964.351, -545.856 )
