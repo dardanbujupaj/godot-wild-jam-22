@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Pris de la Baguette"
+config/name="Prise de la Baguette"
 run/main_scene="res://StartScene.tscn"
 config/icon="res://icon.png"
 
